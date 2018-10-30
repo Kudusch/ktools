@@ -2,7 +2,7 @@
 % Please edit documentation in R/p_table.R
 \name{p_table}
 \alias{p_table}
-\title{Faster prop.table(table())}
+\title{Faster \code{prop.table(table())}}
 \usage{
 p_table(object, percent = TRUE, ...)
 }
@@ -13,9 +13,12 @@ p_table(object, percent = TRUE, ...)
 
 \item{...}{Other arguments passed to \link[base]{table}.}
 }
+\value{
+\code{p_table()} returns a contingency table, an object of class "table", an array of integer values. See \link[base]{table}.
+}
 \description{
-Faster prop.table(table())
+Wrapper for \code{table()} and \code{prop.table()}. Returns APA compliant percentage values from table data.
 }
 \examples{
-p_table(df)
+p_table(df, percent = FALSE, useNA = 'always')
 }

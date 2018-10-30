@@ -15,3 +15,6 @@ saveRDS.gz(object, file, threads = (parallel::detectCores()) - 1,
 \description{
 Save RDS w/ pigz support
 }
+\examples{
+saveRDS.gz(temp, file = 'temp.RDS')
+}
