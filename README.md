@@ -1,4 +1,4 @@
-# ktools: An R Package with useful functions
+# ktools: An R Package With Useful Functions
 
 ## Summary
 
