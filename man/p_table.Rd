@@ -4,10 +4,12 @@
 \alias{p_table}
 \title{Faster prop.table(table())}
 \usage{
-p_table(object, ...)
+p_table(object, percent = TRUE, ...)
 }
 \arguments{
 \item{object}{An object to tabulate.}
+
+\item{percent}{Return rounded percentage.}
 
 \item{...}{Other arguments passed to \link[base]{table}.}
 }
