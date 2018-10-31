@@ -17,4 +17,5 @@ Read RDS w/ pigz support
 }
 \examples{
 temp <- readRDS.gz('temp.RDS')
+
 }

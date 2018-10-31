@@ -7,6 +7,8 @@
 #' @return \code{p_table()} returns a contingency table, an object of class "table", an array of integer values. See \link[base]{table}.
 #' @examples
 #' p_table(df, percent = FALSE, useNA = 'always')
+#'
+#' @export
 p_table <- function(object, percent=TRUE, ...) {
     if (percent == FALSE) {
         return_obj <- prop.table(table(object, ...))

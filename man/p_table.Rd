@@ -21,4 +21,5 @@ Wrapper for \code{table()} and \code{prop.table()}. Returns APA compliant percen
 }
 \examples{
 p_table(df, percent = FALSE, useNA = 'always')
+
 }

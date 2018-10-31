@@ -15,6 +15,8 @@ saveRDS.gz <- function(object,file,threads=(parallel::detectCores())-1,compressi
 #' @return The object at \code{file}.
 #' @examples
 #' temp <- readRDS.gz('temp.RDS')
+#'
+#' @export
 readRDS.gz <- function(file,threads=(parallel::detectCores())-1) {
     con <- pipe(paste0("pigz -d -c -p",threads," ",file))
     object <- base::readRDS(file = con)
