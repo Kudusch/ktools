@@ -6,7 +6,9 @@
 #' @param ... Other arguments passed to \link[base]{table}.
 #' @return \code{p_table()} returns a contingency table, an object of class "table", an array of integer values. See \link[base]{table}.
 #' @examples
+#'\dontrun{
 #' p_table(df, percent = FALSE, useNA = 'always')
+#'}
 #'
 #' @export
 p_table <- function(object, percent=TRUE, ...) {

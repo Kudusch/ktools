@@ -8,14 +8,22 @@ readRDS.gz(file, threads = (parallel::detectCores()) - 1)
 }
 \arguments{
 \item{file}{A location to read from.}
+
+\item{threads}{Number of threads to use. Defaults to \code{parallel::detectCores()-1}.}
 }
 \value{
 The object at \code{file}.
 }
 \description{
-Read RDS w/ pigz support
+This function uses pigz to read RDS files.
+pigz is a fully functional replacement for gzip that exploits
+multiple processors and multiple cores to the hilt when compressing data.
+}
+\details{
+pigz needs to be installed for this function to work.
 }
 \examples{
+\dontrun{
 temp <- readRDS.gz('temp.RDS')
-
+}
 }

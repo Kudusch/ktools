@@ -20,6 +20,8 @@ p_table(object, percent = TRUE, ...)
 Wrapper for \code{table()} and \code{prop.table()}. Returns APA compliant percentage values from table data.
 }
 \examples{
+\dontrun{
 p_table(df, percent = FALSE, useNA = 'always')
+}
 
 }

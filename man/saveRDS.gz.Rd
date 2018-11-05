@@ -11,10 +11,22 @@ saveRDS.gz(object, file, threads = (parallel::detectCores()) - 1,
 \item{object}{An object to save.}
 
 \item{file}{A location to save to.}
+
+\item{threads}{Number of threads to use. Defaults to \code{parallel::detectCores()-1}.}
+
+\item{compression_level}{Compression level used by pigz (1–9).}
 }
 \description{
-Save RDS w/ pigz support
+This function uses pigz to save RDS files.
+pigz is a fully functional replacement for gzip that exploits
+multiple processors and multiple cores to the hilt when compressing data.
+}
+\details{
+pigz needs to be installed for this function to work.
 }
 \examples{
+\dontrun{
 saveRDS.gz(temp, file = 'temp.RDS')
+}
+
 }
