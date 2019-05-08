@@ -13,6 +13,8 @@
 #' # Installing package …
 #'}
 #'
+#' @importFrom utils install.packages
+#'
 #' @export
 library_pls <- function(package) {
     if(interactive()) {
