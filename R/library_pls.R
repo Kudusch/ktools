@@ -25,6 +25,7 @@ library_pls <- function(package) {
                 cat(paste("Install package ", package_name, "?\n", sep = ""))
                 if (readline(prompt="(y/n) ") == "y") {
                     install.packages(package_name)
+                    library(package_name, character.only = TRUE, verbose = TRUE)
                 }
             } else {
                 message("Nothing to do!")
