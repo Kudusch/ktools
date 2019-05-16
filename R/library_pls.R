@@ -1,6 +1,6 @@
 #' Library please! Easier Package Installation
 #'
-#' @description If the last error was raised due to calling \code{library()} on a missing package.
+#' @description If the last error was raised due to calling \code{library()} on a missing package, install from CRAN and load the package.
 #' @param package The package to install.
 #' @examples
 #'\dontrun{
