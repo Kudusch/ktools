@@ -14,3 +14,28 @@ devtools::install_github("kudusch/ktools")
 ```
 
 Note that this will install the `devtools` package and the `ktools` package. 
+
+## Documentation
+
+See help files for detailed documentation.
+
+### get_rank_diff – Calculate rank diff
+
+Implementation of a simple algorithm to find the difference between two corpora. The relative importance of the terms in `tidy_x` are compared to the importance `tidy_y`.
+
+### is.unique – Does a list contain duplicates.
+Check if `length(x) == length(unique(x))` and optionally print table.
+### library_pls – Library please! Easier Package Installation
+![](https://media.giphy.com/media/fxYyiD7BBgwprOsiNI/giphy.gif)
+If the last error was raised due to calling `library()` on a missing package, install from CRAN and load the package.
+### modus – Calculate mode.
+Generic function for mode of a sample.
+### ptable – Faster 'prop.table(table())'
+Wrapper for `table()` and `prop.table()`. Returns APA compliant percentage values from table data.
+### readRDS.gz – Read RDS w/ pigz support
+This function uses pigz to read RDS files. pigz is a fully functional replacement for gzip that exploits multiple processors and multiple cores to the hilt when compressing data. [pigz](https://zlib.net/pigz/) must be installed. 
+### saveRDS.gz – Save RDS w/ pigz support
+See `readRDS.gz`
+
+
+
