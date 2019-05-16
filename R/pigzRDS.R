@@ -17,7 +17,7 @@
 #'
 #' @export
 saveRDS.gz <- function(object,file,threads=(parallel::detectCores())-1,compression_level=6) {
-    con <- pipe(paste0("pigz -c",compression_level," -p",threads," > ",file),"wb")
+    con <- pipe(paste0("pigz -c",compression_level," -p",threads," > ",shQuote(file)),"wb")
     saveRDS(object, file = con)
     close(con)
 }
@@ -38,7 +38,7 @@ saveRDS.gz <- function(object,file,threads=(parallel::detectCores())-1,compressi
 #'}
 #' @export
 readRDS.gz <- function(file,threads=(parallel::detectCores())-1) {
-    con <- pipe(paste0("pigz -d -c -p",threads," ",file))
+    con <- pipe(paste0("pigz -d -c -p",threads," ",shQuote(file)))
     object <- base::readRDS(file = con)
     close(con)
     return(object)
