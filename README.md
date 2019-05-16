@@ -26,8 +26,8 @@ Implementation of a simple algorithm to find the difference between two corpora.
 ### is.unique – Does a list contain duplicates.
 Check if `length(x) == length(unique(x))` and optionally print table.
 ### library_pls – Library please! Easier Package Installation
-![](https://media.giphy.com/media/fxYyiD7BBgwprOsiNI/giphy.gif)
 If the last error was raised due to calling `library()` on a missing package, install from CRAN and load the package.
+![](https://media.giphy.com/media/fxYyiD7BBgwprOsiNI/giphy.gif)
 ### modus – Calculate mode.
 Generic function for mode of a sample.
 ### ptable – Faster 'prop.table(table())'
