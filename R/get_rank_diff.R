@@ -14,6 +14,7 @@
 #' @importFrom stats sd
 #' @importFrom utils flush.console
 #' @importFrom magrittr %>%
+#' @importFrom dplyr n
 #'
 #' @export
 get_rank_diff <- function(tidy_x, tidy_y, id = "id", token = "token") {

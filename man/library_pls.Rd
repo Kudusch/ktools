@@ -10,7 +10,7 @@ library_pls(package)
 \item{package}{The package to install.}
 }
 \description{
-If the last error was raised due to calling \code{library()} on a missing package.
+If the last error was raised due to calling \code{library()} on a missing package, install from CRAN and load the package.
 }
 \examples{
 \dontrun{

@@ -2,7 +2,7 @@
 % Please edit documentation in R/get_rank_diff.R
 \name{get_rank_diff}
 \alias{get_rank_diff}
-\title{Calc rank diff}
+\title{Calculate the if-idf rank differences.}
 \usage{
 get_rank_diff(tidy_x, tidy_y, id = "id", token = "token")
 }
@@ -19,7 +19,7 @@ get_rank_diff(tidy_x, tidy_y, id = "id", token = "token")
 Returns a data frame.
 }
 \description{
-Lorem upsim
+Implementation of a simple algorithm to find the difference between two corpora. The relative importance of the terms in \code{tidy_x} are compared to the importance \code{tidy_y}.
 }
 \examples{
 \dontrun{
