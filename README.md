@@ -36,6 +36,7 @@ Wrapper for `table()` and `prop.table()`. Returns APA compliant percentage value
 This function uses pigz to read RDS files. pigz is a fully functional replacement for gzip that exploits multiple processors and multiple cores to the hilt when compressing data. [pigz](https://zlib.net/pigz/) must be installed. 
 ### saveRDS.gz – Save RDS w/ pigz support
 See `readRDS.gz`
-
-
-
+### readPasteboard - Read from the macOS pasteboard
+`readPasteboard()` and its counterpart `writePasteboard()` are implementations of the [clipboard-functions](https://www.rdocumentation.org/packages/utils/versions/3.6.2/topics/clipboard) on macOS.
+### writePasteboard - Write to the macOS pasteboard
+See `readPasteboard`
