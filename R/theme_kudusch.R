@@ -32,7 +32,7 @@
 #' @importFrom magrittr %>%
 #'
 #' @export
-theme_kudusch <- function(base_size = 11, base_family = "mono") {
+theme_kudusch <- function(base_size = 11, base_family = "Courier New") {
     theme_classic(base_size = base_size,
                   base_family = base_family
     ) %+replace%
