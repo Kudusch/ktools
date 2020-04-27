@@ -2,13 +2,13 @@ Package: ktools
 Type: Package
 Title: An R Package With Useful Functions
 Description: The package implements some useful functions and is mainly for my personal use.
-Version: 1.5.6
+Version: 1.5.7
 Authors@R: person("Tim", "Schatto-Eckrodt", email = "tim.schatto-eckrodt@uni-muenster.de", role = c("aut", "cre"))
 Maintainer: Tim Schatto-Eckrodt <tim.schatto-eckrodt@uni-muenster.de>
 License: file LICENSE
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 6.1.1
+RoxygenNote: 7.1.0
 Imports:
     magrittr,
     tidytext,

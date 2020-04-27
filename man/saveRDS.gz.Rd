@@ -4,8 +4,12 @@
 \alias{saveRDS.gz}
 \title{Save RDS w/ pigz support}
 \usage{
-saveRDS.gz(object, file, threads = (parallel::detectCores()) - 1,
-  compression_level = 6)
+saveRDS.gz(
+  object,
+  file,
+  threads = (parallel::detectCores()) - 1,
+  compression_level = 6
+)
 }
 \arguments{
 \item{object}{An object to save.}
