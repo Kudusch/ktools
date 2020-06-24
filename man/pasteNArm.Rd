@@ -8,6 +8,10 @@ pasteNArm(..., sep = "", collapse = "")
 }
 \arguments{
 \item{...}{See `paste()` for arguments.}
+
+\item{sep}{See `paste()` for arguments.}
+
+\item{collapse}{See `paste()` for arguments.}
 }
 \value{
 See `paste()` for return values.
