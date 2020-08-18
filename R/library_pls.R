@@ -17,23 +17,14 @@
 #'
 #' @export
 library_pls <- function(package) {
-    if(interactive()) {
-        package_name <- deparse(substitute(package))
-        last_error <- .traceback()
-        if (!is.null(last_error)) {
-            if (last_error[[1]] == "stop(packageNotFoundError(package, lib.loc, sys.call()))") {
-                cat(paste("Install package ", package_name, "?\n", sep = ""))
-                if (readline(prompt="(y/n) ") == "y") {
-                    install.packages(package_name)
-                    library(package_name, character.only = TRUE, verbose = TRUE)
-                }
-            } else {
-                message("Nothing to do!")
-            }
-        } else {
-            message("Nothing to do!")
+    package_name <- deparse(substitute(package))
+    if (!package_name %in% row.names(installed.packages())) {
+        cat(paste("Install package ", package_name, "?\n", sep = ""))
+        if (readline(prompt="(y/n) ") == "y") {
+            install.packages(package_name)
+            library(package_name, character.only = TRUE, verbose = TRUE)
         }
     } else {
-        message(.traceback())
+        library(package_name, character.only = TRUE, verbose = TRUE)
     }
 }
