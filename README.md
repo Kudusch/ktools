@@ -20,9 +20,7 @@ Note that this will install the `devtools` package and the `ktools` package.
 See help files for detailed documentation.
 
 ### get_rank_diff – Calculate rank diff
-
 Implementation of a simple algorithm to find the difference between two corpora. The relative importance of the terms in `tidy_x` are compared to the importance `tidy_y`.
-
 ### is.unique – Does a list contain duplicates.
 Check if `length(x) == length(unique(x))` and optionally print table.
 ### library_pls – Library please! Easier Package Installation
@@ -40,3 +38,5 @@ See `readRDS.gz`
 `readPasteboard()` and its counterpart `writePasteboard()` are implementations of the [clipboard-functions](https://www.rdocumentation.org/packages/utils/versions/3.6.2/topics/clipboard) on macOS.
 ### writePasteboard - Write to the macOS pasteboard
 See `readPasteboard`
+### pairwise_count – Slightly faster widyr::pairwise_count() without the deprecation warnings
+Does the same as `widyr::pairwise_count()` just without the deprecated `distinct_()`. So no more warnings! It is also slightly faster and uses a little less memory.
