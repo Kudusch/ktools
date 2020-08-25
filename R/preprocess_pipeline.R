@@ -21,7 +21,7 @@ f.escapeRegex <- function(r) {
 #' @param rm.hashtags A logical, defining if #hashtags should be removed.
 #' @param rm.mentions A logical, defining if @mentions should be removed.
 #' @param rm.emoji A logical, defining if emoji should be removed.
-#' @param rm.digitwords A logical, defining if digitwords should be removed. Digitwords are defined as uninterrupted digits.
+#' @param rm.digitwords A logical, defining if all digits should be removed, including digitwords (e.g. 5G, T3, etc.)
 #' @param join.hyphenation A logical, defining if hyphenated words should be joined.
 #'
 #' @return A preprocessed character vector.
@@ -52,12 +52,18 @@ preprocess.removeNonWordChars <- function(text, rm.hashtags=FALSE, rm.mentions=F
         # Remove @mentions
         message("Removing @mentions")
         text <- gsub("@\\S*", " ", text, ignore.case = TRUE)
+    } else {
+        message("Keeping @mentions")
+        text <- gsub("@(\\S*)", " at_\\1 ", text, ignore.case = TRUE)
     }
 
     if (rm.hashtags) {
         # Remove #hashtags
         message("Removing #hashtags")
         text <- gsub("#\\S*", " ", text, ignore.case = TRUE)
+    } else {
+        message("Keeping #hashtags")
+        text <- gsub("#(\\S*)", " ht_\\1 ", text, ignore.case = TRUE)
     }
 
     # Join apostrophe-words
@@ -75,8 +81,17 @@ preprocess.removeNonWordChars <- function(text, rm.hashtags=FALSE, rm.mentions=F
     text <- gsub("&(\\w+|\\#\\d+);", " ", text, ignore.case = TRUE)
 
     # Remove digits-words
-    message("Removing digit-words")
-    text <- gsub("(\\s|\\W)[0-9]+", " ", text, ignore.case = TRUE)
+    message("Removing digits")
+    if (rm.digitwords) {
+        message("Keeping digit-words")
+        text <- gsub("(\\s|\\W)[0-9]+", " ", text, ignore.case = TRUE)
+    } else {
+        text <- gsub("(?<=\\W)[0-9]+(?=\\W)",
+                     " ",
+                     text,
+                     ignore.case = TRUE,
+                     perl = T)
+    }
 
     # Remove punctuation
     message("Removing punctuation")

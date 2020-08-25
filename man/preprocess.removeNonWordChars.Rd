@@ -22,7 +22,7 @@ preprocess.removeNonWordChars(
 
 \item{rm.emoji}{A logical, defining if emoji should be removed.}
 
-\item{rm.digitwords}{A logical, defining if digitwords should be removed. Digitwords are defined as uninterrupted digits.}
+\item{rm.digitwords}{A logical, defining if all digits should be removed, including digitwords (e.g. 5G, T3, etc.)}
 
 \item{join.hyphenation}{A logical, defining if hyphenated words should be joined.}
 }
