@@ -23,7 +23,7 @@ pairwise_count_ <- function(tbl, item, feature, sort, diag, upper) {
     values_unique <- unique(values)
     tbl[[item]] <- match(values, values_unique)
 
-    pairs_sparse <- tidytext::cast_sparse(tbl, item, group)
+    pairs_sparse <- tidytext::cast_sparse(tbl, (!!sym(item)), (!!sym(feature)))
     res <- Matrix::tcrossprod(pairs_sparse)
     res <- as(res, "dgCMatrix")
     pairs_counted <- nonzero_(res) %>%
