@@ -170,3 +170,34 @@ preprocess.genTidyDF <- function(df, text_col) {
 }
 
 
+#' Stem word vectors
+#'
+#' This function is a wrapper for \code{huhunspell::huhunspell_stem()} that filters emptpy tokens.
+#'
+#' @param words A character vector to be stemmed.
+#' @param dict The hunspell dictonary to be used.
+#'
+#' @return A character vector of stemmed words.
+#'
+#' @examples
+#'\dontrun{
+#' preprocess.stem(words, "de_DE")
+#'}
+#'
+#' @export
+preprocess.stem <- function(words, dict) {
+    return(unlist(lapply(words, f.stem_word, dict)))
+}
+f.stem_word <- function(word, dict) {
+    if (typeof(dict) == "character") {
+        x <- hunspell::hunspell_stem(word, dict = hunspell::dictionary(dict))
+    } else {
+        x <- hunspell::hunspell_stem(word, dict = dict)
+    }
+    if (identical(x[[1]], character(0))) {
+        return(word)
+    } else {
+        return(x[[1]][1])
+    }
+}
+
