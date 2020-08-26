@@ -186,18 +186,18 @@ preprocess.genTidyDF <- function(df, text_col) {
 #'
 #' @export
 preprocess.stem <- function(words, dict) {
-    return(unlist(lapply(words, f.stem_word, dict)))
-}
-f.stem_word <- function(word, dict) {
     if (typeof(dict) == "character") {
-        x <- hunspell::hunspell_stem(word, dict = hunspell::dictionary(dict))
+        stem_list <- hunspell::hunspell_stem(words, dict = hunspell::dictionary(dict))
     } else {
-        x <- hunspell::hunspell_stem(word, dict = dict)
+        stem_list <- hunspell::hunspell_stem(words, dict = dict)
     }
-    if (identical(x[[1]], character(0))) {
-        return(word)
-    } else {
-        return(x[[1]][1])
-    }
+    out <- lapply(stem_list, function(x) {
+        if (identical(x, character(0))) {
+            return("")
+        } else {
+            return(x[1])
+        }
+    })
+    return(unlist(out))
 }
 
