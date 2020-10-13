@@ -26,12 +26,15 @@ Check if `length(x) == length(unique(x))` and optionally print table.
 ### library_pls – Library please! Easier Package Installation
 If the last error was raised due to calling `library()` on a missing package, install from CRAN and load the package.
 ![](https://media.giphy.com/media/fxYyiD7BBgwprOsiNI/giphy.gif)
+### theme_kudusch - A minimal custom theme for ggplot2
+![](https://kudusch.de/projects/uploads/files/light.png)
+![](https://kudusch.de/projects/uploads/files/dark.png)
 ### modus – Calculate mode.
 Generic function for mode of a sample.
 ### ptable – Faster 'prop.table(table())'
 Wrapper for `table()` and `prop.table()`. Returns APA compliant percentage values from table data.
 ### readRDS.gz – Read RDS w/ pigz support
-This function uses pigz to read RDS files. pigz is a fully functional replacement for gzip that exploits multiple processors and multiple cores to the hilt when compressing data. [pigz](https://zlib.net/pigz/) must be installed. 
+This function uses pigz to read RDS files. pigz is a fully functional replacement for gzip that exploits multiple processors and multiple cores to the hilt when compressing data. [pigz](https://zlib.net/pigz/) must be installed.
 ### saveRDS.gz – Save RDS w/ pigz support
 See `readRDS.gz`
 ### readPasteboard - Read from the macOS pasteboard
