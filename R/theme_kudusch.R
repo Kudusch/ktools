@@ -82,7 +82,8 @@ theme_kudusch <- function(base_size = 9, base_family = "Menlo") {
                 linetype = "dotted"
             ),
             strip.text = element_text(
-                margin = margin(t = 6, r = 6, b = 6, l = 6, unit = "pt")
+                margin = margin(t = 6, r = 6, b = 6, l = 6, unit = "pt"),
+                size = 7
             ),
             legend.position = "bottom",
             legend.box = "horizontal",
@@ -180,32 +181,33 @@ theme_kudusch_dark <- function(base_size = 9, base_family = "Menlo") {
                 alpha("black", 0.1)
             ),
             panel.grid.major = element_line(
-                color = "#FFFFFF",
+                color = "#999999",
                 linetype = "solid",
                 alpha("black", 0.3)
             ),
             panel.grid.minor = element_line(
-                color = "#FFFFFF",
-                linetype = "solid"
+                color = "#777777",
+                linetype = "dotted"
             ),
             panel.grid.minor.x = element_line(
-                color = "#FFFFFF",
+                color = "#777777",
                 linetype = "dotted"
             ),
             panel.spacing = unit(5, "mm"),
             strip.background.x = element_rect(
                 fill = "#303030",
-                color = "#FFFFFF",
+                color = "#BBBBBB",
                 linetype = "dotted"
             ),
             strip.background.y = element_rect(
                 fill = "#303030",
-                color = "#FFFFFF",
+                color = "#BBBBBB",
                 linetype = "dotted"
             ),
             strip.text = element_text(
                 color = "#FFFFFF",
-                margin = margin(t = 6, r = 6, b = 6, l = 6, unit = "pt")
+                margin = margin(t = 6, r = 6, b = 6, l = 6, unit = "pt"),
+                size = 7
             ),
             panel.background = element_rect(
                 color = "#303030",
