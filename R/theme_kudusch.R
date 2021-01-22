@@ -32,7 +32,7 @@
 #' @importFrom magrittr %>%
 #'
 #' @export
-theme_kudusch <- function(base_size = 9, base_family = "Menlo") {
+theme_kudusch <- function(base_size = 9, base_family = "Anka/Coder Narrow") {
     theme_classic(base_size = base_size,
                   base_family = base_family
     ) %+replace%
@@ -129,7 +129,7 @@ theme_kudusch <- function(base_size = 9, base_family = "Menlo") {
 #' @importFrom magrittr %>%
 #'
 #' @export
-theme_kudusch_dark <- function(base_size = 9, base_family = "Menlo") {
+theme_kudusch_dark <- function(base_size = 9, base_family = "Anka/Coder Narrow") {
     theme_classic(base_size = base_size,
                   base_family = base_family
     ) %+replace%
