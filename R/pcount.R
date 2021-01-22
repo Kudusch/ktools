@@ -1,12 +1,14 @@
 pcount_ <- function(tbl, x, percent, name, ...) {
-    tbl <- tbl %>% count((!!sym(x)), name=name, ...)
     if (name == "n") {
-        tbl$p <- tbl$n/sum(tbl$n)
+        percent.name <- "p"
     } else {
-        tbl[paste0(name, "_percent")] <- tbl[name]/sum(tbl[name])
+        percent.name <- paste0(name, "_percent")
     }
+    tbl <- tbl %>%
+        count((!!sym(x)), name=name, ...) %>%
+        mutate(!!percent.name := (!!sym(name))/sum(!!sym(name)))
     if (percent) {
-        tbl[3] <- round(tbl[3]*100, 2)
+        tbl[percent.name] <- round(tbl[percent.name]*100, 2)
     }
     tbl
 }
