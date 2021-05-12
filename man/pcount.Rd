@@ -9,13 +9,13 @@ pcount(tbl, x, percent = TRUE, name = "n", ...)
 \arguments{
 \item{tbl}{Table}
 
+\item{x}{The variable to count and calculate the percentage on.}
+
 \item{percent}{logical. Return rounded percentage.}
 
 \item{name}{character. The name of the new column in the output. If omitted, it will default to n.}
 
 \item{...}{Other arguments passed to \link[dplyr]{count}.}
-
-\item{object}{The variable to count and calculate the percentage on.}
 }
 \value{
 \code{pcount()} returns the same as \code{count()} with an aditional percentage column. See \link[dplyr]{count}.

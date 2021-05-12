@@ -17,7 +17,7 @@ pcount_ <- function(tbl, x, percent, name, ...) {
 #'
 #' @description Shortcut for count(x) %>% mutate(p = n/sum(n)). Returns APA compliant percentage values from table data.
 #' @param tbl Table
-#' @param object The variable to count and calculate the percentage on.
+#' @param x The variable to count and calculate the percentage on.
 #' @param percent logical. Return rounded percentage.
 #' @param name character. The name of the new column in the output. If omitted, it will default to n.
 #' @param ... Other arguments passed to \link[dplyr]{count}.
