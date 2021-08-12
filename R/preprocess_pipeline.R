@@ -110,7 +110,7 @@ preprocess.removeNonWordChars <- function(text, rm.hashtags=FALSE, rm.mentions=F
     }
 
     text <- gsub(pattern = regex_pattern, " ", text, perl = TRUE, ignore.case = TRUE)
-
+    text <- gsub(pattern = "(\u00bb|\u00ab)", " ", text, perl = TRUE, ignore.case = TRUE)
     message("Mean number of chars per document at end: ", round(mean(str_length(text)), 1))
     return(text)
 }
