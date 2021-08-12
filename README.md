@@ -10,7 +10,7 @@ to installed, you can install the most recent development version using the devt
 
 ```
 if(!require(devtools)) install.packages("devtools")
-devtools::install_github("kudusch/ktools")
+devtools::install_github("kudusch/ktools@main")
 ```
 
 Note that this will install the `devtools` package and the `ktools` package. 
