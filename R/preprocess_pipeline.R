@@ -96,7 +96,7 @@ preprocess.removeNonWordChars <- function(text, rm.hashtags=FALSE, rm.mentions=F
     # Remove punctuation
     message("Removing punctuation")
     if (rm.emoji) {
-        regex_pattern <- paste("[^a-zA-Z\\x7f-\\xff0-9_" ,"]", sep = "")
+        regex_pattern <- paste("[^a-zA-Z\u00C0-\u017E0-9_" ,"]", sep = "")
     } else {
         message("Keeping emoji")
         df.emojis <- ktools::Emojis
@@ -105,7 +105,7 @@ preprocess.removeNonWordChars <- function(text, rm.hashtags=FALSE, rm.mentions=F
         df.emojis$Code_alt <- gsub("\\+", "000", df.emojis$Code)
         text <- gsub(pattern = "\uFE0F", " ", text, perl = TRUE, ignore.case = TRUE)
         text <- gsub(pattern = paste("(" ,paste(df.emojis$Emoji, collapse = "|"), ")", sep = ""), " \\1 ", text, perl = TRUE, ignore.case = TRUE)
-        regex_pattern <- paste("[^a-zA-Z\\x7f-\\xff0-9_\\s", paste(df.emojis$Emoji, collapse = ""), "]+", sep = "")
+        regex_pattern <- paste("[^a-zA-Z\u00C0-\u017E0-9_\\s", paste(df.emojis$Emoji, collapse = ""), "]+", sep = "")
         rm(df.emojis)
     }
 
