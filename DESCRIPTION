@@ -2,7 +2,7 @@ Package: ktools
 Type: Package
 Title: An R Package With Useful Functions
 Description: The package implements some useful functions and is mainly for my personal use.
-Version: 1.10.3
+Version: 1.10.4
 Authors@R: person("Tim", "Schatto-Eckrodt", email = "tim.schatto-eckrodt@uni-muenster.de", role = c("aut", "cre"))
 Maintainer: Tim Schatto-Eckrodt <tim.schatto-eckrodt@uni-muenster.de>
 License: file LICENSE

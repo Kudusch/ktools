@@ -4,7 +4,7 @@
 \alias{theme_kudusch}
 \title{A simple custom theme for ggplot.}
 \usage{
-theme_kudusch(base_size = 11, base_family = "Anka/Coder Narrow")
+theme_kudusch(base_size = 12, base_family = "Anka/Coder Narrow")
 }
 \arguments{
 \item{base_size}{base font size}

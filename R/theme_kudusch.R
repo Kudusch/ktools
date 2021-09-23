@@ -32,7 +32,7 @@
 #' @importFrom magrittr %>%
 #'
 #' @export
-theme_kudusch <- function(base_size = 11, base_family = "Anka/Coder Narrow") {
+theme_kudusch <- function(base_size = 12, base_family = "Anka/Coder Narrow") {
     theme_classic(base_size = base_size,
                   base_family = base_family
     ) %+replace%
@@ -46,10 +46,6 @@ theme_kudusch <- function(base_size = 11, base_family = "Anka/Coder Narrow") {
                 hjust = 0,
                 margin = margin(b = 10)
             ),
-            legend.title = element_text(
-                margin = margin(b = 5),
-                hjust = 0
-            ),
             axis.title.x = element_text(
                 margin = margin(t = 10)
             ),
@@ -59,6 +55,9 @@ theme_kudusch <- function(base_size = 11, base_family = "Anka/Coder Narrow") {
             ),
             axis.line = element_line(
                 arrow = arrow(length = unit(2, "mm"))
+            ),
+            axis.text = element_text(
+                size = base_size
             ),
             panel.grid = element_line(
                 linetype = "solid",
@@ -83,7 +82,7 @@ theme_kudusch <- function(base_size = 11, base_family = "Anka/Coder Narrow") {
             ),
             strip.text = element_text(
                 margin = margin(t = 6, r = 6, b = 6, l = 6, unit = "pt"),
-                size = 7
+                size = 10
             ),
             legend.position = "bottom",
             legend.box = "horizontal",
@@ -129,7 +128,7 @@ theme_kudusch <- function(base_size = 11, base_family = "Anka/Coder Narrow") {
 #' @importFrom magrittr %>%
 #'
 #' @export
-theme_kudusch_dark <- function(base_size = 11, base_family = "Anka/Coder Narrow") {
+theme_kudusch_dark <- function(base_size = 12, base_family = "Anka/Coder Narrow") {
     theme_classic(base_size = base_size,
                   base_family = base_family
     ) %+replace%
