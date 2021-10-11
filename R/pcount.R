@@ -1,4 +1,4 @@
-pcount_ <- function(tbl, x, percent, name, ...) {
+pcount_ <- function(tbl, x, rounded, name, ...) {
     if (name == "n") {
         percent.name <- "p"
     } else {
@@ -7,7 +7,7 @@ pcount_ <- function(tbl, x, percent, name, ...) {
     tbl <- tbl %>%
         count((!!sym(x)), name=name, ...) %>%
         mutate(!!percent.name := (!!sym(name))/sum(!!sym(name)))
-    if (percent) {
+    if (rounded) {
         tbl[percent.name] <- round(tbl[percent.name]*100, 2)
     }
     tbl
@@ -18,7 +18,7 @@ pcount_ <- function(tbl, x, percent, name, ...) {
 #' @description Shortcut for count(x) %>% mutate(p = n/sum(n)). Returns APA compliant percentage values from table data.
 #' @param tbl Table
 #' @param x The variable to count and calculate the percentage on.
-#' @param percent logical. Return rounded percentage.
+#' @param rounded logical. Return rounded percentage. If false decimal values will be used.
 #' @param name character. The name of the new column in the output. If omitted, it will default to n.
 #' @param ... Other arguments passed to \link[dplyr]{count}.
 #' @return \code{pcount()} returns the same as \code{count()} with an aditional percentage column. See \link[dplyr]{count}.
@@ -38,7 +38,7 @@ pcount_ <- function(tbl, x, percent, name, ...) {
 #'}
 #'
 #' @export
-pcount <- function(tbl, x, percent=TRUE, name="n", ...) {
-    pcount_(tbl, substitute(x), percent, name, ...)
+pcount <- function(tbl, x, rounded=TRUE, name="n", ...) {
+    pcount_(tbl, substitute(x), rounded, name, ...)
 }
 

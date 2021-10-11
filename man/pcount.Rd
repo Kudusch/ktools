@@ -4,14 +4,14 @@
 \alias{pcount}
 \title{Wrapper for \code{count()} with percentages}
 \usage{
-pcount(tbl, x, percent = TRUE, name = "n", ...)
+pcount(tbl, x, rounded = TRUE, name = "n", ...)
 }
 \arguments{
 \item{tbl}{Table}
 
 \item{x}{The variable to count and calculate the percentage on.}
 
-\item{percent}{logical. Return rounded percentage.}
+\item{rounded}{logical. Return rounded percentage. If false decimal values will be used.}
 
 \item{name}{character. The name of the new column in the output. If omitted, it will default to n.}
 
