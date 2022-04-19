@@ -10,24 +10,24 @@
 #'
 #' @export
 summary.igraph <- function(object, ...) {
-    n.nodes <- length(V(object))
-    n.edges <- length(E(object))
-    if (is.connected(object)) {
+    n.nodes <- length(igraph::V(object))
+    n.edges <- length(igraph::E(object))
+    if (igraph::is.connected(object)) {
         connected <- "connected"
     } else {
         connected <- "disconnected"
     }
-    if (is.directed(object)) {
+    if (igraph::is.directed(object)) {
         directed <- "directed"
     } else {
         directed <- "undirected"
     }
 
-    edge.attr <- edge_attr(object)
+    edge.attr <- igraph::edge_attr(object)
     edge.attr.names <- names(edge.attr)
     edge.attr.types <- unlist(lapply(edge.attr.names, function(x) {typeof(edge.attr[[x]])}))
 
-    vert.attr <- vertex_attr(object)
+    vert.attr <- igraph::vertex_attr(object)
     vert.attr.names <- names(vert.attr)
     vert.attr.types <- unlist(lapply(vert.attr.names, function(x) {typeof(vert.attr[[x]])}))
 
