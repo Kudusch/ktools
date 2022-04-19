@@ -7,7 +7,7 @@
 #'\dontrun{
 #' summary(g)
 #' }
-#'
+#' @export summary.igraph
 #' @export
 summary.igraph <- function(object, ...) {
     n.nodes <- length(igraph::V(object))

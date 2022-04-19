@@ -18,5 +18,4 @@ A summary-function for igraph objects.
 \dontrun{
 summary(g)
 }
-
 }
