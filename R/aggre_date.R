@@ -7,18 +7,21 @@
 #'
 #' @export
 aggre_date <- function(x, by) {
-    if (by == "minute") {
+    if (by == "minute" | by == "minutes") {
         out <- strptime(format(x, "%Y-%m-%dT%H:%M:00"), "%Y-%m-%dT%H:%M:%S", tz = lubridate::tz(x))
-    } else if (by == "hour") {
+    } else if (by == "hour" | by == "hours") {
         out <- strptime(format(x, "%Y-%m-%dT%H:00:00"), "%Y-%m-%dT%H:%M:%S", tz = lubridate::tz(x))
-    } else if (by == "day") {
+    } else if (by == "day" | by == "days") {
         out <- strptime(format(x, "%Y-%m-%dT00:00:00"), "%Y-%m-%dT%H:%M:%S", tz = lubridate::tz(x))
-    } else if (by == "week") {
+    } else if (by == "week" | by == "weeks") {
         out <- strptime(format(x, "%Y-W%U-1"), "%Y-W%U-%w", tz = lubridate::tz(x))
-    } else if (by == "month") {
+    } else if (by == "month" | by == "months") {
         out <- strptime(format(x, "%Y-%m-01T00:00:00"), "%Y-%m-%dT%H:%M:%S", tz = lubridate::tz(x))
-    } else if (by == "year") {
+    } else if (by == "year" | by == "years") {
         out <- strptime(format(x, "%Y-01-01T00:00:00"), "%Y-%m-%dT%H:%M:%S", tz = lubridate::tz(x))
+    } else {
+        print("`by` needs to be minute(s), hour(s), day(s), week(s), month(s), or year(s)")
+        return(NA)
     }
     return(as.POSIXct(out))
 }
