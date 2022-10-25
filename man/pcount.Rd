@@ -21,7 +21,7 @@ pcount(tbl, x, rounded = TRUE, name = "n", ...)
 \code{pcount()} returns the same as \code{count()} with an aditional percentage column. See \link[dplyr]{count}.
 }
 \description{
-Shortcut for count(x) %>% mutate(p = n/sum(n)). Returns APA compliant percentage values from table data.
+Shortcut for count(x) |> mutate(p = n/sum(n)). Returns APA compliant percentage values from table data.
 }
 \examples{
 \dontrun{
