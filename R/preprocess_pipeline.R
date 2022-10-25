@@ -157,15 +157,15 @@ preprocess.removeStopwords <- function(text, stopwords) {
 #' @export
 preprocess.genTidyDF <- function(df, text_col) {
     text_col = enquo(text_col)
-    df %>%
+    df |>
         unnest_tokens(
             word_token,
             !!text_col,
             token = "regex",
-            pattern = "\\s") %>%
+            pattern = "\\s") |>
         filter(!str_detect(word_token, pattern = "^\\s*$"),
                !word_token == "",
-               !grepl(pattern = "\\x{200D}", word_token)) %>%
+               !grepl(pattern = "\\x{200D}", word_token)) |>
         return(.)
 }
 

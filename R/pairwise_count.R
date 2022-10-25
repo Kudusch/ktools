@@ -1,7 +1,7 @@
 nonzero_ <- function(x){
     ## function to get a two-column matrix containing the indices of the
-    ### non-zero elements in a "dgCMatrix" class matrix
-    stopifnot(inherits(x, "dgCMatrix"))
+    ### non-zero elements in a "generalMatrix" class matrix
+    stopifnot(inherits(x, "generalMatrix"))
     if (all(x@p == 0)) {
         return(matrix(
             0,
@@ -23,11 +23,11 @@ pairwise_count_ <- function(tbl, item, feature, sort, diag, upper) {
     values_unique <- unique(values)
     tbl[[item]] <- match(values, values_unique)
 
-    pairs_sparse <- tidytext::cast_sparse(tbl, (!!sym(item)), (!!sym(feature)))
+    pairs_sparse <- tidytext::cast_sparse(tbl, (!!dplyr::sym(item)), (!!dplyr::sym(feature)))
     res <- Matrix::tcrossprod(pairs_sparse)
-    res <- as(res, "dgCMatrix")
-    pairs_counted <- nonzero_(res) %>%
-        as_tibble() %>%
+    res <- as(res, "generalMatrix")
+    pairs_counted <- nonzero_(res) |>
+        tibble::as_tibble() |>
         dplyr::mutate(item1 = values_unique[item1],
                       item2 = values_unique[item2],
                       n = res@x)
@@ -38,7 +38,7 @@ pairwise_count_ <- function(tbl, item, feature, sort, diag, upper) {
         pairs_counted <- dplyr::filter(pairs_counted, item1 != item2)
     }
     if (sort == TRUE) {
-        pairs_counted <- pairs_counted %>% dplyr::arrange(-n)
+        pairs_counted <- pairs_counted |> dplyr::arrange(-n)
     }
     pairs_counted
 }

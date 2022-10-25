@@ -29,7 +29,6 @@
 #'
 #' @importFrom ggplot2 %+replace% theme_classic theme element_text margin element_line arrow unit alpha element_rect
 #' @importFrom utils flush.console
-#' @importFrom magrittr %>%
 #'
 #' @export
 theme_kudusch <- function(base_size = 12, base_family = "Anka/Coder Narrow") {
@@ -125,7 +124,6 @@ theme_kudusch <- function(base_size = 12, base_family = "Anka/Coder Narrow") {
 #'
 #' @importFrom ggplot2 %+replace% theme_classic theme element_text margin element_line arrow unit alpha element_rect
 #' @importFrom utils flush.console
-#' @importFrom magrittr %>%
 #'
 #' @export
 theme_kudusch_dark <- function(base_size = 12, base_family = "Anka/Coder Narrow") {

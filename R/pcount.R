@@ -4,8 +4,8 @@ pcount_ <- function(tbl, x, rounded, name, ...) {
     } else {
         percent.name <- paste0(name, "_percent")
     }
-    tbl <- tbl %>%
-        count((!!sym(x)), name=name, ...) %>%
+    tbl <- tbl |>
+        count((!!sym(x)), name=name, ...) |>
         mutate(!!percent.name := (!!sym(name))/sum(!!sym(name)))
     if (rounded) {
         tbl[percent.name] <- round(tbl[percent.name]*100, 2)
@@ -15,7 +15,7 @@ pcount_ <- function(tbl, x, rounded, name, ...) {
 
 #' Wrapper for \code{count()} with percentages
 #'
-#' @description Shortcut for count(x) %>% mutate(p = n/sum(n)). Returns APA compliant percentage values from table data.
+#' @description Shortcut for count(x) |> mutate(p = n/sum(n)). Returns APA compliant percentage values from table data.
 #' @param tbl Table
 #' @param x The variable to count and calculate the percentage on.
 #' @param rounded logical. Return rounded percentage. If false decimal values will be used.

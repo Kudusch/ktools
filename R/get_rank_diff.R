@@ -13,7 +13,6 @@
 #'
 #' @importFrom stats sd
 #' @importFrom utils flush.console
-#' @importFrom magrittr %>%
 #' @importFrom dplyr n
 #'
 #' @export
@@ -54,15 +53,15 @@ get_corpus_rank_diff <- function(tidy_x, tidy_y, id = "id", token = "token") {
     tidy_x$token <- tidy_x[[match(token, names(tidy_x))]]
     tidy_y$id <- paste(tidy_y[[id]], "y", sep = "_")
     tidy_y$token <- tidy_y[[match(token, names(tidy_y))]]
-    tidy_combined <- rbind(tidy_x, tidy_y) %>% dplyr::count(id, token, sort = TRUE)
-    tidy_sum <- tidy_combined %>%
-        dplyr::group_by(id) %>%
+    tidy_combined <- rbind(tidy_x, tidy_y) |> dplyr::count(id, token, sort = TRUE)
+    tidy_sum <- tidy_combined |>
+        dplyr::group_by(id) |>
         dplyr::summarize(total = sum(n))
     tidy_combined <- dplyr::left_join(tidy_combined, tidy_sum, by = "id")
-    tidy_combined <- tidy_combined %>%
+    tidy_combined <- tidy_combined |>
         tidytext::bind_tf_idf(token, id, n)
-    freq_by_rank <- tidy_combined %>%
-        dplyr::group_by(id) %>%
+    freq_by_rank <- tidy_combined |>
+        dplyr::group_by(id) |>
         dplyr::mutate(rank = rank(-tf_idf))
     id_vec <- stringr::str_split(freq_by_rank$id, "_")
     id_vec <- unlist(id_vec)
